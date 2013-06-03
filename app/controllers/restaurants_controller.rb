@@ -19,6 +19,8 @@ class RestaurantsController < ApplicationController
     end
 
     def destroy
+        @restaurant = Restaurant.find(params[:id])
+        @restaurant.destroy
     end
 
     def show

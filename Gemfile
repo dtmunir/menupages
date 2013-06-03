@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 
 gem 'annotate'
+gem "bootstrap-sass",       ">= 2.1.1.0"

@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+ @import "bootstrap";
+
 body {
     background-color: orange;
 }
@@ -22,10 +24,10 @@ h1 {
     color: teal;
 }
 
-label {
+/*label {
     font-size: 20px;
     color: green;
-   
+
 }
 
 .name {
@@ -38,4 +40,4 @@ label {
     font-size: 20px;
     color: gray;
     width: 200px;
-}
+}*/
