@@ -8,9 +8,13 @@
 </head>
 <body>
 <div>
-  <a href= "/"> Home </a>
+  <%= link_to 'Home', :root %>
+  <%= link_to 'Menus', menus_path %>
+  <%= link_to 'New Restaurant', new_restaurant_path %>
+  <%= link_to 'New Menu', new_menu_path %>
+  <!-- <a href= "/"> Home </a>
   <a href = "/restaurants/new"> New Restaurant </a>
-  <a href = "/menus/new"> New Menu </a>
+  <a href = "/menus/new"> New Menu </a> -->
 </div>
 <%= yield %>
 

@@ -29,6 +29,7 @@ Menupages::Application.routes.draw do
   #     end
   #   end
 
+
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
