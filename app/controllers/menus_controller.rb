@@ -5,6 +5,7 @@ class MenusController < ApplicationController
 
     def new
         @menu = Menu.new
+        @restaurants = Restaurant.all
     end
 
     def create

@@ -1,0 +1,13 @@
+<%= form_for(@menu) do |x| %>
+  <div>
+    <%= x.label :restaurant %>
+    <%= x.collection_select(:restaurant_id, @restaurants, :id, :to_s) %>
+  </div>
+  <div>
+    <%= x.label :name%>
+    <%= x.text_field :name%>
+  </div>
+  <div>
+    <%= x.submit %>
+  </div>
+  <% end %>

@@ -1,6 +1,8 @@
 <h1>List of Menus</h1>
 
 <% @menus.each do |x|  %>
+<p>
   <%= x.name %>
   <%= x.restaurant.name %>
+</p>
 <% end %>
