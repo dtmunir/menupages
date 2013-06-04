@@ -4,6 +4,12 @@ Feature: Menu Items
 
 
   Scenario: Adding a menu item
+    Given a restaurant with name "Hampton Chutney Co." and address "Lafayette and Prince" exists
+    Given there exists a menu  with name "lunch" for restaurant "Hampton Chutney Co."
+    When I click on "Add Menu Item"
+    And I fill in name and price with "Tomato Soup" and "4"
+    And I hit save
+    Then I should see the text "Tomato Soup"
 
   Scenario: Deleting a menu item
 
