@@ -4,4 +4,9 @@ class Menu < ActiveRecord::Base
 
   belongs_to :restaurant, :dependent => :destroy    
   has_many :menu_items
+
+  def to_s
+  	"#{self.name} menu for #{self.restaurant}"
+  end
+
 end

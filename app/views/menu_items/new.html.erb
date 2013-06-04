@@ -1,0 +1,17 @@
+<%= form_for(@menu_item) do |x| %>
+  <div>
+    <%= x.label :menu %>
+    <%= x.collection_select(:menu_id, @menus, :id, :to_s) %>
+  </div>
+  <div>
+    <%= x.label :name%>
+    <%= x.text_field :name%>
+  </div>
+   <div>
+      <%= x.label :price%>
+      <%= x.text_field :price%>
+  </div>
+  <div>
+    <%= x.submit %>
+  </div>
+  <% end %>

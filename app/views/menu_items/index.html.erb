@@ -1,0 +1,8 @@
+<h1>List of Menu Items</h1>
+
+<% @menu_items.each do |x|  %>
+<p>
+  <%= link_to "#{x.name} #{x.price}", menu_path(x) %>
+</p>
+
+<% end %>
