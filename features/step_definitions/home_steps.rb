@@ -23,11 +23,12 @@ Given(/^there exists a menu  with name "(.*?)" for restaurant "(.*?)"$/) do |men
 end
 
 
-Given(/^there exists a menu item with name "(.*?)" for menu "(.*?)"$/) do |item_name, menu_name|
+Given(/^there exists a menu item with name "(.*?)" and price "(.*?)" for menu "(.*?)"$/) do |item_name, item_price, menu_name|
   m = Menu.where(:name => menu_name)[0]
   i = MenuItem.new
   i.menu = m
   i.name = item_name
+  i.price = item_price
   i.save
 end
 
