@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -40,3 +40,12 @@ gem 'jquery-rails'
 
 gem 'annotate'
 gem "bootstrap-sass",       ">= 2.1.1.0"
+
+group :test do
+  gem "rspec-rails"
+  gem "database_cleaner",   ">= 0.9.1"
+  gem "email_spec",         ">= 1.4.0"
+  gem "cucumber-rails",     ">= 1.3.0", :require => false
+  gem "launchy",            ">= 2.1.2"
+  gem "capybara",           ">= 1.1.3"
+end

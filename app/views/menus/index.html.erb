@@ -2,8 +2,8 @@
 
 <% @menus.each do |x|  %>
 <p>
-  <%= x.name %>
-  <%= x.restaurant.name %>
+  <%= link_to "#{x.name} #{x.restaurant.name}", menu_path(x) %>
 </p>
 
 <% end %>
+

@@ -1,0 +1,7 @@
+<h1><%= @menu.name %></h1>
+<% @menu.menu_items.each do |mi| %>
+  <p>
+    <%= mi.name %>
+    <%= mi.price %>
+  </p>
+<% end %>
