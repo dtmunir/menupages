@@ -12,6 +12,15 @@ Feature: Menu Items
     Then I should see the text "Tomato Soup"
 
   Scenario: Deleting a menu item
+    Given a restaurant with name "Hampton Chutney Co." and address "Lafayette and Prince" exists
+    Given there exists a menu  with name "lunch" for restaurant "Hampton Chutney Co."
+    Given there exists a menu item with name "Grilled Cheese" and price "8" for menu "lunch"
+    When I visit the menus page
+    And I click on "lunch Hampton Chutney Co."
+    And I click on "Delete"
+    And I visit the menus page
+    And I click on "lunch Hampton Chutney Co."
+    Then I should not see the text "Grilled Cheese"
 
   Scenario: Changing a menu item
 
