@@ -43,3 +43,5 @@ Feature: Menu Items
     And I select an image
     And I hit save
     Then I should see the image
+
+    
