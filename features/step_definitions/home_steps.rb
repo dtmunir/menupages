@@ -61,12 +61,6 @@ Then(/^I should see the image$/) do
   page.should have_selector("img[src$='sushi.png']")
 end
 
-When(/^I click "(.*?)"$/) do |arg1|
-  puts page.body
-  find_button(arg1).click
-  puts "\n"
-  puts page.body
-end
 
 
 
