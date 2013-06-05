@@ -13,10 +13,9 @@ class Review < ActiveRecord::Base
 	attr_accessible :name, :comment, :rating, :restaurant_id, :restaurant
 	belongs_to :restaurant, :dependent => :destroy
 
-	validates :name, :presence => true
+	validates :name, :presence => true, :uniqueness => true
 	validates :comment, :presence => true
 	validates :rating, :presence => true
-  # attr_accessible :title, :body
 
   	def to_s
   		"#{self.name}'s Review"

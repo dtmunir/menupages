@@ -5,13 +5,13 @@ class ReviewsController < ApplicationController
 
     def new
         @review = Review.new
-        @restaurants = Restaurant.all
+        @review.restaurant_id = params[:restaurant_id] 
     end
 
     def create
         @review = Review.new(params[:review])
         @review.save
-        redirect_to restaurant_path(@review.restaurant)
+        redirect_to restaurant_path(@review.restaurant_id)
     end
 
     def edit
