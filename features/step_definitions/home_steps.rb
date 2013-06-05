@@ -11,6 +11,7 @@ end
 
 Then(/^I should see the text "(.*?)"$/) do |text|
   page.should have_content text
+  puts page.body
 end
 
 
@@ -39,3 +40,20 @@ end
 When(/^I click on "(.*?)"$/) do |link_text|
   click_link link_text
 end
+
+When(/^I fill in name and price with "(.*?)" and "(.*?)"/) do |name, price|
+  fill_in "Name", :with => name
+  fill_in "Price", :with => price
+end
+
+When(/^I hit save/) do
+  click_button("Create Menu item")
+  puts page.body
+end
+
+Then(/^I should not see the text "(.*?)"$/) do |text|
+  page.should_not have_content text
+end
+
+
+
