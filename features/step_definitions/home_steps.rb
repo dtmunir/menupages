@@ -11,7 +11,6 @@ end
 
 Then(/^I should see the text "(.*?)"$/) do |text|
   page.should have_content text
-  puts page.body
 end
 
 
@@ -48,7 +47,6 @@ end
 
 When(/^I hit save/) do
   click_button("Create Menu item")
-  puts page.body
 end
 
 Then(/^I should not see the text "(.*?)"$/) do |text|
