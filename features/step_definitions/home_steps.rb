@@ -45,8 +45,24 @@ When(/^I fill in name and price with "(.*?)" and "(.*?)"/) do |name, price|
   fill_in "Price", :with => price
 end
 
+When(/^I enter a review with name "(.*?)" and comment "(.*?)" and rating "(.*?)"/) do |name, comment, rating|
+  fill_in "Name", :with =>name 
+  fill_in "Write your review", :with => comment 
+  choose(rating)
+end
+
 When(/^I hit save/) do
   click_button("Create Menu item")
+end
+
+When(/^I save the review/) do
+  click_button("Create Review")
+end
+
+Then(/^I should see the review "(.*?)" and rating "(.*?)"/) do |comment, rating|
+  puts page.body
+  page.should have_content comment
+  page.should have_content rating
 end
 
 Then(/^I should not see the text "(.*?)"$/) do |text|
