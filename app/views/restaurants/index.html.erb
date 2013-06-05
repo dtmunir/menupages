@@ -4,6 +4,8 @@
     <p>
         <%= link_to r.name+ " " + r.address, r %>, 
         <%= link_to 'Delete', restaurant_path(r), :confirm => "Are you sure you want to delete this restaurant?", :method => :delete %>
+        <%= " Average Rating: " + r.printRating.to_s %>
+
         
       </p>
 <% end %>

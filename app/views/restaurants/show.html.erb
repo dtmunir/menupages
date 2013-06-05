@@ -1,21 +1,20 @@
 <h1><%= @restaurant.name %> </h1>
-<h2> Menus </h2>
-<% @restaurant.menus.each do |m| %>
-  <p>
-    <%= link_to m.name, m%>
-    <%= link_to 'Delete', menu_path(m), :confirm => "Are you sure you want to delete this menu?", :method => :delete %>
-  </p>
+  <h2> Menus </h2>
+    <% @restaurant.menus.each do |m| %>
+      <p>
+      <%= link_to m.name, m%>
+      <%= link_to 'Delete', menu_path(m), :confirm => "Are you sure you want to delete this menu?", :method => :delete %>
+      <%= " Average Rating: " + @restaurant.averageRating.to_s %>
+      </p>
   <% end %>
 
   <h2> Reviews </h2>
   <%= link_to "Add a Review", new_review_path(:restaurant_id => @restaurant.id) %>
 
   <% @restaurant.reviews.each do |m| %>
-  <p>
-    <%= m.name%><br> 
-    <i> Rating</i> <%= m.rating %><br>
-    <%= m.comment %> <br>
-
-  </p>
-  
- <% end %>
+    <p>
+      <%= m.name%><br> 
+      <i> Rating</i> <%= m.rating %><br>
+      <%= m.comment %> <br>
+    </p>
+  <% end %>

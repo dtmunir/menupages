@@ -21,5 +21,21 @@ class Restaurant < ActiveRecord::Base
   def to_s
     self.name
    end
+
+  def averageRating
+  	sum = 0.0
+  	self.reviews.each do |x|
+  		sum += x.rating 
+  	end
+  	average = sum / self.reviews.count 
+  end
+
+  def printRating
+  	if self.reviews.count > 0 
+  		averageRating.to_s
+  	else
+  		"No Reviews Yet!"
+  	end
+  end
    
 end
