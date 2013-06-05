@@ -53,5 +53,21 @@ Then(/^I should not see the text "(.*?)"$/) do |text|
   page.should_not have_content text
 end
 
+When(/^I select an image "(.*?)"$/) do |arg1|
+  attach_file("Image", "#{Rails.root}/features/fixtures/sushi.png")
+end
+
+Then(/^I should see the image$/) do
+  page.should have_selector("img[src$='sushi.png']")
+end
+
+When(/^I click "(.*?)"$/) do |arg1|
+  puts page.body
+  find_button(arg1).click
+  puts "\n"
+  puts page.body
+end
+
+
 
 

@@ -39,7 +39,8 @@ Feature: Menu Items
     And I click on "lunch Hampton Chutney Co."
     And I click on "Add Menu Item"
     And I fill in name and price with "Tomato Soup" and "4"
-    And I click on "Upload"
-    And I select an image
+    
+    And I select an image "Tomato.png"
     And I hit save
     Then I should see the image
+

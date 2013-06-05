@@ -24,6 +24,34 @@ h1 {
     color: teal;
 }
 
+div.button
+{
+    position:relative;
+    width: 100px;
+    height: 30px;
+    overflow:hidden;
+}
+
+div button
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+div input.browse-field
+{
+    font: 500px monospace; /* make the input's button HUGE */
+    opacity:0; /* this will make it transparent */
+    filter: alpha(opacity=0); /* transparency for Internet Explorer */
+    position: absolute;  /* making it absolute with z-index:1 will place it on top of the button */
+    z-index: 1;
+    top:0;
+    right:0;
+    padding:0;
+    margin: 0;
+}
+
 /*label {
     font-size: 20px;
     color: green;
