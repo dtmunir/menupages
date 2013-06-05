@@ -2,6 +2,7 @@
 
 <% @restaurants.each do |r| %>
     <p>
+        <%= link_to "#{r.name}", restaurant_path(r) %>
         <%= r.name %>, <i><%= r.address %></i> 
         <%= link_to 'Delete', restaurant_path(r), :confirm => "Are you sure you want to delete this restaurant?", :method => :delete %>
         
