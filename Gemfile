@@ -38,9 +38,10 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 
-gem 'annotate'
+gem "annotate"
 gem "bootstrap-sass",       ">= 2.1.1.0"
-gem 'carrierwave'  # Gem for uploading images
+gem "mini_magick"
+gem "carrierwave"  # Gem for uploading images
 
 group :test do
   gem "rspec-rails"
