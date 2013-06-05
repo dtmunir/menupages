@@ -28,6 +28,7 @@ class Restaurant < ActiveRecord::Base
   		sum += x.rating 
   	end
   	average = sum / self.reviews.count 
+  	average.round(2)
   end
 
   def printRating
