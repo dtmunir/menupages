@@ -1,0 +1,25 @@
+<%= form_for(@review) do |x| %>
+  <div>
+    <%= x.label :restaurant %>
+    <%= x.collection_select(:restaurant_id, @restaurants, :id, :to_s) %>
+  </div>
+  <div>
+    <%= x.label :name%>
+    <%= x.text_field :name%>
+  </div>
+  <div> 
+    <%= x.label :comment, "Write your review" %>
+    <%= x.text_field :comment %>
+  </div>
+  <div>
+    <%= x.label :rating, "Leave your rating for the restaurant" %>
+    <%= f.radio_button :rating, 1 %><b> 1 </b> 
+    <%= f.radio_button :rating, 2 %><b> 2 </b> 
+    <%= f.radio_button :rating, 3 %><b> 3 </b> 
+    <%= f.radio_button :rating, 4 %><b> 4 </b> 
+    <%= f.radio_button :rating, 5 %><b> 5 </b> 
+ 
+  </div>
+    <%= x.submit %>
+  </div>
+  <% end %>
