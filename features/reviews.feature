@@ -10,3 +10,9 @@ Feature: Restaurant Reviews
     And I enter a review
     And I save the review
     Then I should see the review
+
+  Scenario: Restaurant review scores are averaged and displayed on home page
+    Given a restaurant with name "Hampton Chutney Co." and address "Lafayette and Prince" exists
+    When I add multiple reviews  #
+    And I visit the home page
+    Then I should see the average of the scores on the reviews
