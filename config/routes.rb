@@ -5,6 +5,7 @@ Menupages::Application.routes.draw do
   resources :restaurants
   resources :menus
   resources :menu_items
+  resources :reviews
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
