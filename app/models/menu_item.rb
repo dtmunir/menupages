@@ -11,11 +11,13 @@
 #
 
 class MenuItem < ActiveRecord::Base
-  attr_accessible :menu_id, :name, :price, :menu
+  attr_accessible :menu_id, :name, :price, :image, :menu
 
   belongs_to :menu
 
   validates :name, :presence => true
   validates :price, :presence => true
+
+  mount_uploader :image, ImageUploader
 
 end

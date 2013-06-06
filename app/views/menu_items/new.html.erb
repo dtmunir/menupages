@@ -11,6 +11,15 @@
       <%= x.label :price%>
       <%= x.text_field :price%>
   </div>
+
+  <%= x.label :image %>
+  <div class = "button">
+    <button>Browse</button>
+    <%= x.label :image %>
+    <%= x.file_field :image, :class => "browse-field"%> 
+</div>
+
+
   <div>
     <%= x.submit %>
   </div>

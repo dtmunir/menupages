@@ -76,6 +76,14 @@ When(/^I add multiple reviews for "(.*?)"/) do |r_name|
   rw3 = Review.create(:name => "Reza Aslan", :comment => "I love ALL of the chutneys.", :rating => 4, :restaurant => r)
 end
 
+When(/^I select an image "(.*?)"$/) do |arg1|
+  attach_file("Image", "#{Rails.root}/features/fixtures/sushi.png")
+end
+
+Then(/^I should see the image$/) do
+  page.should have_selector("img[src$='sushi.png']")
+end
+
 Then(/^I should see the average of the scores on the reviews/) do
   restaurant = Restaurant.where(:name => "Hampton Chutney Co.")[0]
   sum = 0
