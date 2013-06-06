@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+    before_filter :authenticate_user!, except: [:index, :show]
 
     def index
         @menu_items = MenuItems.all

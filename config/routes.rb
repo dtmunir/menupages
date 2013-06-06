@@ -1,5 +1,7 @@
 Menupages::Application.routes.draw do
 
+  devise_for :users
+
   resources :restaurants
   resources :menus
   resources :menu_items
