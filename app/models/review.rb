@@ -2,11 +2,13 @@
 #
 # Table name: reviews
 #
-#  id         :integer          not null, primary key
-#  comment    :string(255)
-#  rating     :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :integer          not null, primary key
+#  comment       :string(255)
+#  name          :string(255)
+#  rating        :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  restaurant_id :integer
 #
 
 class Review < ActiveRecord::Base
