@@ -12,6 +12,7 @@
 #
 
 class Review < ActiveRecord::Base
+
 	attr_accessible :name, :comment, :rating, :restaurant_id, :restaurant
 	belongs_to :restaurant, :dependent => :destroy
 
@@ -19,6 +20,7 @@ class Review < ActiveRecord::Base
 	validates :comment, :presence => true
 	validates :rating, :presence => true
 
+	
   	def to_s
   		"#{self.name}'s Review"
   	end
