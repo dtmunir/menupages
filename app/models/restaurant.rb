@@ -11,7 +11,7 @@
 
 class Restaurant < ActiveRecord::Base
 
-  resourcify
+  #resourcify
   
   attr_accessible :name, :address
 
