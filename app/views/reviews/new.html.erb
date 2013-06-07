@@ -1,8 +1,8 @@
 <%= form_for(@review) do |x| %>
   <h1> Review for <%= @review.restaurant %> </h1> 
   <div>
-    <%= x.label :name%>
-    <%= x.text_field :name%>
+    User: <%= current_user.email%>
+    <!%= x.text_field :name%>
   </div>
   <div> 
     <%= x.label :comment, "Write your review" %>

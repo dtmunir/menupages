@@ -16,12 +16,13 @@ class Review < ActiveRecord::Base
 	attr_accessible :name, :comment, :rating, :restaurant_id, :restaurant
 	belongs_to :restaurant, :dependent => :destroy
 
-	validates :name, :presence => true, :uniqueness => true
+	#validates :name, :presence => true, :uniqueness => true
 	validates :comment, :presence => true
 	validates :rating, :presence => true
 
 	
   	def to_s
-  		"#{self.name}'s Review"
+  		#"#{self.name}'s Review"
+  		current_user.email +"'s Review"
   	end
 end

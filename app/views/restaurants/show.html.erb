@@ -14,7 +14,7 @@
 
 <% @restaurant.reviews.each do |m| %>
   <p>
-    <%= m.name%><br> 
+    <%= current_user.email + "'s Review"%><br> 
     <i> Rating</i> <%= m.rating %><br>
     <%= m.comment %> <br>
   </p>
