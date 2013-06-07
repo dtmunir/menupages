@@ -44,6 +44,7 @@ gem "mini_magick"
 gem "carrierwave"  # Gem for uploading images
 gem "devise" # Gem for user authenticiation 
 gem "rolify"
+gem 'cancan'
 
 group :test do
   gem "rspec-rails"
