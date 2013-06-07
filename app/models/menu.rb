@@ -10,6 +10,9 @@
 #
 
 class Menu < ActiveRecord::Base
+
+	resourcify
+	
   # attr_accessible :title, :body
   attr_accessible :restaurant_id, :name, :restaurant
 

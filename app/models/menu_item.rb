@@ -12,6 +12,8 @@
 #
 
 class MenuItem < ActiveRecord::Base
+	resourcify
+	
   attr_accessible :menu_id, :name, :price, :image, :menu
 
   belongs_to :menu

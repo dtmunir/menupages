@@ -43,6 +43,7 @@ gem "bootstrap-sass",       ">= 2.1.1.0"
 gem "mini_magick"
 gem "carrierwave"  # Gem for uploading images
 gem "devise" # Gem for user authenticiation 
+gem "rolify"
 
 group :test do
   gem "rspec-rails"

@@ -12,7 +12,8 @@
 #
 
 class Review < ActiveRecord::Base
-
+	resourcify
+	
 	attr_accessible :name, :comment, :rating, :restaurant_id, :restaurant
 	belongs_to :restaurant, :dependent => :destroy
 

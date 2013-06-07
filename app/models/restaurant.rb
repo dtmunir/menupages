@@ -11,6 +11,8 @@
 
 class Restaurant < ActiveRecord::Base
 
+  resourcify
+  
   attr_accessible :name, :address
 
   validates :name, :presence => true
