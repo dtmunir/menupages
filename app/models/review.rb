@@ -23,7 +23,6 @@ class Review < ActiveRecord::Base
 
 	
   	def to_s
-  		#"#{self.name}'s Review"
-  		current_user.email +"'s Review"
+  		"#{self.name}'s Review"
   	end
 end

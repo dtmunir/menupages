@@ -18,6 +18,7 @@
  
   </div>
     <%= x.hidden_field :restaurant_id, :value => @review.restaurant_id %>
+    <%= x.hidden_field :name, :value => current_user.email %>
     <%= x.submit%>
   </div>
   <% end %>
