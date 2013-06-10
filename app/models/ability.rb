@@ -6,9 +6,10 @@ class Ability
         can :manage, :all
     elsif user.has_role? :reviewer
         can :read, :all 
-        can :new, :review
-        can :new, :menu
-        can :new, :menu_item
+        can :create, @review
+        can :new, @review
+        can :create, @menu
+        can :create, @menu_item
     else
         can :read, :all
     end

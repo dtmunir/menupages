@@ -8,8 +8,14 @@ Feature: Menu Items
   Background:
     Given a restaurant with name "Hampton Chutney Co." and address "Lafayette and Prince" exists
     Given there exists a menu  with name "lunch" for restaurant "Hampton Chutney Co."
+    When I visit the menus page
 
   Scenario: Adding a menu item
+    Given a valid user
+    And I click on "Login"
+    And I fill in "Email" with "k@g.com"
+    And I fill in "Password" with "12345678"
+    And I click "Sign in"
     When I visit the menus page
     And I click on "lunch Hampton Chutney Co."
     And I click on "Add Menu Item"
@@ -18,6 +24,11 @@ Feature: Menu Items
     Then I should see the text "Tomato Soup"
 
   Scenario: Deleting a menu item
+    Given a valid admin
+    And I click on "Login"
+    And I fill in "Email" with "k@a.com"
+    And I fill in "Password" with "12345678"
+    And I click "Sign in"
     Given there exists a menu item with name "Grilled Cheese" and price "8" for menu "lunch"
     When I visit the menus page
     And I click on "lunch Hampton Chutney Co."
@@ -35,6 +46,11 @@ Feature: Menu Items
     Then I should see the text "Grilled Cheese"
 
   Scenario: Adding a menu item with an image
+    Given a valid user
+    And I click on "Login"
+    And I fill in "Email" with "k@g.com"
+    And I fill in "Password" with "12345678"
+    And I click "Sign in"
     When I visit the menus page
     And I click on "lunch Hampton Chutney Co."
     And I click on "Add Menu Item"

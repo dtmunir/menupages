@@ -45,9 +45,7 @@ When(/^I fill in name and price with "(.*?)" and "(.*?)"/) do |name, price|
   fill_in "Price", :with => price
 end
 
-When(/^I enter a review with name "(.*?)" and comment "(.*?)" and rating "(.*?)"/) do |name, comment, rating|
-  fill_in "Name", :with =>name 
-  fill_in "Write your review", :with => comment 
+Then(/^I choose rating "(.*?)"$/) do |rating|
   choose(rating)
 end
 
@@ -93,5 +91,29 @@ Then(/^I should see the average of the scores on the reviews/) do
   average = sum / restaurant.reviews.count
   average.round(2)
   page.should have_content average.to_s
+end
+
+
+When(/^I fill in "(.*?)" with "(.*?)"/) do |text, arg|
+  fill_in text, :with => arg
+end
+
+When(/^I click "(.*?)"$/) do |button|
+  click_button(button)
+end
+
+Given(/^a valid user$/) do
+  user = User.create! ({:email => "k@g.com", 
+                        :password => "12345678",
+                        :password_confirmation => "12345678"})
+end
+
+Given(/^a valid admin$/) do
+  user = User.create! ({:email => "k@a.com", 
+                        :password => "12345678",
+                        :password_confirmation => "12345678"})
+  user.add_role "admin"
+  user.save
+  puts Ability.new(user).can? :manage, :all
 end
 
