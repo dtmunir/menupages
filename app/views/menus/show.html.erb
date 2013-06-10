@@ -8,7 +8,15 @@
     	<img src= <%=mi.image%> height= '150' width = '200'> </img>
     <% end %>
 
-    <%= link_to 'Delete', menu_item_path(mi), :confirm => "Are you sure you want to delete this menu item?", :method => :delete %>
+    <% if current_user %>
+    	<% if can? :destroy, @menu_item %>
+    		<%= link_to 'Delete', menu_item_path(mi), :confirm => "Are you sure you want to delete this menu item?", :method => :delete %>
+  		<% end %>
+  	<% end %>
   </p>
 <% end %>
-   <%= link_to "Add Menu Item", new_menu_item_path %>
+	<% if current_user %>
+		<% if can? :new, @menu_item %>
+   			<%= link_to "Add Menu Item", new_menu_item_path %>
+   		<% end %>
+   	<% end %>

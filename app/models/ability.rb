@@ -4,6 +4,11 @@ class Ability
   def initialize(user)
     if user.has_role? :admin
         can :manage, :all
+    elsif user.has_role? :reviewer
+        can :read, :all 
+        can :new, :review
+        can :new, :menu
+        can :new, :menu_item
     else
         can :read, :all
     end
